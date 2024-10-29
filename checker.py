@@ -1,5 +1,6 @@
 import random
 import requests
+import time
 
 harfler = "abcdefghjklmnoprstvyz1234567890"
 
@@ -15,4 +16,6 @@ for _ in range(200):
     elif response.status_code == 204:
         print(f"Kullanıcı Adı: {username} (Kullanılabilir)")
     else:
-        print(f"Kullanıcı Adı: {username} (Bilinmeyen durum veya hata)")
+        print(f"Kullanıcı Adı: {username} (Api rate limited)")
+        time.sleep(200)
+        print("devam ediyor")
